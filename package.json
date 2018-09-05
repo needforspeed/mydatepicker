@@ -1,5 +1,5 @@
 {
-  "name": "mydatepicker",
+  "name": "mydatepicker-fix",
   "version": "2.6.5",
   "description": "Angular date picker",
   "keywords": [
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kekeh/mydatepicker.git"
+    "url": "https://github.com/needforspeed/mydatepicker.git"
   },
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js --progress",
