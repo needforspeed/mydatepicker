@@ -27,6 +27,7 @@
   "module": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@angular-devkit/schematics": "^8.3.29",
     "@angular/animations": "^6.1.10",
     "@angular/common": "6.1.10",
     "@angular/compiler": "6.1.10",
