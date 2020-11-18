@@ -12,7 +12,7 @@ const normalSampleTpl: string = require('./sample-date-picker-normal.html');
 
 export class SampleDatePickerNormal implements OnInit {
 
-    @ViewChild('mydp') mydp: MyDatePicker;
+    @ViewChild('mydp', {static: false}) mydp: MyDatePicker;
 
     private myDatePickerNormalOptions: IMyDpOptions = {
         todayBtnTxt: 'Today',
