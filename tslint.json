@@ -40,7 +40,6 @@
     "no-internal-module": true,
     "no-trailing-whitespace": true,
     "no-unsafe-finally": true,
-    "no-use-before-declare": true,
     "no-var-keyword": true,
     "radix": false,
     "one-line": [
