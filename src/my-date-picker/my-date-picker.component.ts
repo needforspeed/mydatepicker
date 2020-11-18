@@ -41,8 +41,8 @@ export class MyDatePicker implements OnChanges, ControlValueAccessor, OnDestroy 
     @Output() calendarViewChanged: EventEmitter<IMyCalendarViewChanged> = new EventEmitter<IMyCalendarViewChanged>();
     @Output() calendarToggle: EventEmitter<number> = new EventEmitter<number>();
     @Output() inputFocusBlur: EventEmitter<IMyInputFocusBlur> = new EventEmitter<IMyInputFocusBlur>();
-    @ViewChild("selectorEl") selectorEl: ElementRef;
-    @ViewChild("inputBoxEl") inputBoxEl: ElementRef;
+    @ViewChild("selectorEl", {static: false}) selectorEl: ElementRef;
+    @ViewChild("inputBoxEl", {static: false}) inputBoxEl: ElementRef;
 
     onChangeCb: (_: any) => void = () => { };
     onTouchedCb: () => void = () => { };
