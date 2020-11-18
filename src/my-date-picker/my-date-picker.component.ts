@@ -1,14 +1,8 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ElementRef, ViewEncapsulation, ChangeDetectorRef, Renderer, ViewChild, forwardRef, OnDestroy } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, ElementRef, ViewEncapsulation, ChangeDetectorRef, Renderer2, ViewChild, forwardRef, OnDestroy } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { IMyDate, IMyDateRange, IMyMonth, IMyCalendarDay, IMyCalendarMonth, IMyCalendarYear, IMyWeek, IMyDayLabels, IMyMonthLabels, IMyOptions, IMyDateModel, IMyInputFieldChanged, IMyCalendarViewChanged, IMyInputFocusBlur, IMyMarkedDates, IMyMarkedDate, IMyDateFormat } from "./interfaces/index";
 import { LocaleService } from "./services/my-date-picker.locale.service";
 import { UtilService } from "./services/my-date-picker.util.service";
-
-// webpack1_
-declare var require: any;
-const myDpStyles: string = require("./my-date-picker.component.css");
-const myDpTpl: string = require("./my-date-picker.component.html");
-// webpack2_
 
 export const MYDP_VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
@@ -27,8 +21,8 @@ const MMM = "mmm";
 @Component({
     selector: "my-date-picker",
     exportAs: "mydatepicker",
-    styles: [myDpStyles],
-    template: myDpTpl,
+    styleUrls: ["./my-date-picker.component.css"],
+    templateUrl: "./my-date-picker.component.html",
     providers: [LocaleService, UtilService, MYDP_VALUE_ACCESSOR],
     encapsulation: ViewEncapsulation.None
 })
@@ -139,7 +133,7 @@ export class MyDatePicker implements OnChanges, ControlValueAccessor, OnDestroy 
         ariaLabelNextYear: <string> "Next Year"
     };
 
-    constructor(public elem: ElementRef, private renderer: Renderer, private cdr: ChangeDetectorRef, private localeService: LocaleService, private utilService: UtilService) {
+    constructor(public elem: ElementRef, private renderer: Renderer2, private cdr: ChangeDetectorRef, private localeService: LocaleService, private utilService: UtilService) {
         this.setLocaleOptions();
     }
 
@@ -473,7 +467,8 @@ export class MyDatePicker implements OnChanges, ControlValueAccessor, OnDestroy 
     }
 
     openSelector(reason: number): void {
-        this.globalListener = this.globalListener || this.renderer.listenGlobal("document", "click", (event: any) => {
+        // https://angular.io/guide/migration-renderer
+        this.globalListener = this.globalListener || this.renderer.listen("document", "click", (event: any) => {
             if (this.showSelector && event.target && this.elem.nativeElement !== event.target && !this.elem.nativeElement.contains(event.target)) {
                 this.showSelector = false;
                 this.calendarToggle.emit(CalToggle.CloseByOutClick);
