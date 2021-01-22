@@ -1,11 +1,22 @@
 {
-  "name": "my-date-picker",
-  "version": "0.0.1",
+  "author": "needforspeed",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "description": "Angular date picker",
+  "keywords": [
+    "Angular 11",
+    "date picker"
+  ],
+  "license": "MIT",
+  "name": "mydatepicker-fix",
   "peerDependencies": {
     "@angular/common": "^11.1.0",
     "@angular/core": "^11.1.0"
   },
-  "dependencies": {
-    "tslib": "^2.0.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/needforspeed/mydatepicker.git"
+  },
+  "version": "11.0.0"
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ivy-mydatepicker": {
+    "mydatepicker": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -164,5 +164,5 @@
       }
     }
   },
-  "defaultProject": "ivy-mydatepicker"
+  "defaultProject": "mydatepicker"
 }
