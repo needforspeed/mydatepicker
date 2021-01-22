@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ivy-mydatepicker",
+            "outputPath": "dist/mydatepicker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ivy-mydatepicker:build"
+            "browserTarget": "mydatepicker:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ivy-mydatepicker:build:production"
+              "browserTarget": "mydatepicker:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ivy-mydatepicker:build"
+            "browserTarget": "mydatepicker:build"
           }
         },
         "test": {
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ivy-mydatepicker:serve"
+            "devServerTarget": "mydatepicker:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ivy-mydatepicker:serve:production"
+              "devServerTarget": "mydatepicker:serve:production"
             }
           }
         }
